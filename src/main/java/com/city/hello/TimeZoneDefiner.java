@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import java.time.ZoneId;
 import java.time.zone.ZoneRulesException;
+import java.util.Arrays;
 
 public class TimeZoneDefiner {
 
@@ -19,29 +20,31 @@ public class TimeZoneDefiner {
     }
 
 
-
     public ZoneId defineTimeZone() {
 
         cityName = parametersReader.readCity();
+        String zoneCity = cityName.replaceAll("\\s", "_");
 
         while (true) {
             try {
-               String timeZone = parametersReader.readTimeZone();
+                String timeZone = parametersReader.readTimeZone();
 
-                for (String zoneId : ZoneId.getAvailableZoneIds()) {
+                for (String loopZone : ZoneId.getAvailableZoneIds()) {
 
-                    if (zoneId.contains(cityName.replaceAll("\\s", "_"))) {
+                    String[] splitZone = loopZone.split("/");
 
-                        if (zoneId.contains(timeZone) || timeZone.isEmpty()) {
-                            return ZoneId.of(zoneId);
-                        } else
-                            throw new ZoneRulesException("Неправильный часовой пояс для этого города!");
+                    if (Arrays.stream(splitZone).anyMatch(z -> z.equals(zoneCity)) && splitZone.length > 1) {
+
+                        if (splitZone[0].equals(timeZone) || timeZone.isEmpty())
+                            return ZoneId.of(loopZone);
+                        else
+                            throw new ZoneRulesException("ОШИБКА ВВОДА!!! Неправильный часовой пояс для этого города!");
 
                     }
                 }
 
             } catch (ZoneRulesException e) {
-                logger.info("ОШИБКА ВВОДА!!! " + e.getMessage());
+                logger.info(e.getMessage());
                 continue;
             }
 
@@ -49,7 +52,6 @@ public class TimeZoneDefiner {
         }
 
     }
-
 
 
     public String getCityName() {
