@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 public class ParametersReader {
 
@@ -20,6 +21,8 @@ public class ParametersReader {
 
 
     public String readCity() {
+        Pattern pattern = Pattern.compile("[\\d_!@#$%^&*()\\-+]");
+
         while (true) {
 
             try {
@@ -27,8 +30,8 @@ public class ParametersReader {
 
                 String city = bufferedReader.readLine().trim();
 
-                if (city.isEmpty()) {
-                    logger.info("ОШИБКА ВВОДА!!! Параметр не может быть пустым!");
+                if (city.isEmpty() || pattern.matcher(city).find()) {
+                    logger.info("ОШИБКА ВВОДА!!! Параметр обязателен и должен содержать только латинские буквы!");
 
                     continue;
                 }
