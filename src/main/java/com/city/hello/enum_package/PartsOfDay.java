@@ -18,6 +18,7 @@ public enum PartsOfDay {
     }
 
 
+
     public static PartsOfDay getPart(LocalTime time) {
         PartsOfDay part = null;
 

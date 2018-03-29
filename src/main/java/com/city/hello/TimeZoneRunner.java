@@ -1,14 +1,11 @@
 package com.city.hello;
 
 
-
 import com.city.hello.enum_package.PartsOfDay;
-import sun.nio.cs.ext.MacUkraine;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Locale;
@@ -29,9 +26,6 @@ public class TimeZoneRunner {
         String cityName = definer.getCityName();
         LocalTime zonedTime = LocalTime.now(zoneId);
 
-        System.out.println(zoneId);
-        System.out.println(zonedTime);
-
 
 //        Locale.setDefault(Locale.US);
 
@@ -40,6 +34,7 @@ public class TimeZoneRunner {
 
         String greeting = messageManager.getMessage(PartsOfDay.getPart(zonedTime), cityName);
 
+        System.out.println("--------------------------");
         System.out.println(greeting);
 
 

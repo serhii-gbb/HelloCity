@@ -35,4 +35,5 @@ public class MessageManager {
 
         return String.format("%s, %s!", message, cityName);
     }
+
 }

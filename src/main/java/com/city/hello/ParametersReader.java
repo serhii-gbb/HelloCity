@@ -24,6 +24,7 @@ public class ParametersReader {
 
             try {
                 System.out.print("Введите название города: ");
+
                 String city = bufferedReader.readLine().trim();
 
                 if (city.isEmpty()) {
@@ -40,6 +41,8 @@ public class ParametersReader {
         }
     }
 
+
+
     public String readTimeZone() {
         String city = "";
 
@@ -54,6 +57,5 @@ public class ParametersReader {
 
         return city;
     }
-
 
 }

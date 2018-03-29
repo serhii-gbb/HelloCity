@@ -19,6 +19,7 @@ public class TimeZoneDefiner {
     }
 
 
+
     public ZoneId defineTimeZone() {
 
         cityName = parametersReader.readCity();
