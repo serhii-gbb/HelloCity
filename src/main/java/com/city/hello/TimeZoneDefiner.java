@@ -33,9 +33,9 @@ public class TimeZoneDefiner {
 
                     String[] splitZone = loopZone.split("/");
 
-                    if (Arrays.stream(splitZone).anyMatch(z -> z.equals(zoneCity)) && splitZone.length > 1) {
+                    if (Arrays.stream(splitZone).anyMatch(z -> z.equals(zoneCity))) {
 
-                        if (splitZone[0].equals(timeZone) || timeZone.isEmpty())
+                        if (splitZone[0].equals(timeZone) || timeZone.isEmpty() || splitZone.length == 1)
                             return ZoneId.of(loopZone);
                         else
                             throw new ZoneRulesException("ОШИБКА ВВОДА!!! Неправильный часовой пояс для этого города!");
