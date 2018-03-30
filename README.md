@@ -3,4 +3,4 @@
 
 Log file will be created outside of main project directory!
 
-Start JAR: java -jar -Dfile.encoding=UTF-8 HelloCity.jar "param1" param2
+IDE: .properties files charencoding -> UTF-8(rebuild project)
