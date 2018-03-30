@@ -2,3 +2,5 @@
 [![Build Status](https://travis-ci.org/serhii-gbb/HelloCity.svg?branch=master)](https://travis-ci.org/serhii-gbb/HelloCity)
 
 Log file will be created outside of main project directory!
+
+Start JAR: java -jar -Dfile.encoding=UTF-8 HelloCity.jar "param1" param2

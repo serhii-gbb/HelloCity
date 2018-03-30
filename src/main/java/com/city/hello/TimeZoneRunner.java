@@ -12,7 +12,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class TimeZoneRunner {
-    private static final String RESOURCES_ROOT_NAME = "greetings";
+    public static final String RESOURCES_ROOT_NAME = "greetings";
 
     public static void main(String[] args) {
 

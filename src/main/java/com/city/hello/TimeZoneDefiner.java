@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class TimeZoneDefiner {
 
-    private final ZoneId DEFAULT_TIME_ZONE = ZoneId.of("GMT");
+    public static final ZoneId DEFAULT_TIME_ZONE = ZoneId.of("GMT");
     private final Logger logger = LoggerFactory.getLogger(TimeZoneDefiner.class);
 
     private ParametersReader parametersReader;
