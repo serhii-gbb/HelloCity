@@ -9,10 +9,10 @@ public class TimeZoneJarDefiner {
 
 
     public static ZoneId getTimeZone(String city, String timeZone) {
-
+        String formatCity = city.replaceAll("\\s", "_");
         for (String loopZone : ZoneId.getAvailableZoneIds()) {
 
-            if (timeZone.isEmpty() && loopZone.contains(city)) {
+            if (timeZone.isEmpty() && loopZone.contains(formatCity)) {
                 return ZoneId.of(loopZone);
 
             } else if (!timeZone.isEmpty() && loopZone.contains(timeZone)) {
