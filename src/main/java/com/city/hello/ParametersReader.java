@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 public class ParametersReader {
 
-    private final Logger logger = LoggerFactory.getLogger(ParametersReader.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(ParametersReader.class);
     private BufferedReader bufferedReader;
 
 
@@ -31,7 +31,7 @@ public class ParametersReader {
                 String city = bufferedReader.readLine().trim();
 
                 if (city.isEmpty() || pattern.matcher(city).find()) {
-                    logger.info("ОШИБКА ВВОДА!!! Параметр обязателен и должен содержать только латинские буквы!");
+                    LOGGER.info("ОШИБКА ВВОДА!!! Параметр обязателен и должен содержать только латинские буквы!");
 
                     continue;
                 }
@@ -39,7 +39,7 @@ public class ParametersReader {
                 return city;
 
             } catch (IOException e) {
-                logger.error(e.getMessage());
+                LOGGER.error(e.getMessage());
             }
         }
     }
@@ -55,7 +55,7 @@ public class ParametersReader {
             city = bufferedReader.readLine().trim();
 
         } catch (IOException e) {
-            logger.error(e.getMessage());
+            LOGGER.error(e.getMessage());
         }
 
         return city;

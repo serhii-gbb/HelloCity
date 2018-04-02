@@ -26,7 +26,6 @@ public class TimeZoneJarDefiner {
 
         return TimeZoneDefiner.DEFAULT_TIME_ZONE;
 
-
     }
 
 }

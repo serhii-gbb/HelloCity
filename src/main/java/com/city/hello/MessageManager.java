@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
 
 public class MessageManager {
 
-    private final Logger logger = LoggerFactory.getLogger(MessageManager.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(MessageManager.class);
     private final String ISO8859_1_ENCODING = "ISO8859-1";
 
     private ResourceBundle resourceBundle;
@@ -30,7 +30,7 @@ public class MessageManager {
             message = new String(resourceBundleString.getBytes(ISO8859_1_ENCODING), Charset.defaultCharset());
 
         } catch (UnsupportedEncodingException e) {
-            logger.error(e.getMessage());
+            LOGGER.error(e.getMessage());
         }
 
         return String.format("%s, %s!", message, cityName);

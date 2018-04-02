@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class TimeZoneDefiner {
 
     public static final ZoneId DEFAULT_TIME_ZONE = ZoneId.of("GMT");
-    private final Logger logger = LoggerFactory.getLogger(TimeZoneDefiner.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(TimeZoneDefiner.class);
 
     private ParametersReader parametersReader;
     private String cityName;
@@ -44,7 +44,7 @@ public class TimeZoneDefiner {
                 }
 
             } catch (ZoneRulesException e) {
-                logger.info(e.getMessage());
+                LOGGER.info(e.getMessage());
                 continue;
             }
 
